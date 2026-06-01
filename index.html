@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vessel - Mini-Heroku Platform</title>
+  <meta name="description" content="Vessel is a mini-heroku PaaS for one click deploys, immutable releases, and technical clarity for small teams." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/vessel.ico" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-loading">
+  <div id="page-loader" class="page-loader" aria-hidden="true"></div>
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-shell" data-animate>
+      <a class="logo" href="#top" aria-label="Vessel home">
+        <img class="logo-img" src="assets/nobg-vessel-default-2.png" alt="Vessel" />
+      </a>
+
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="#platform">Platform</a>
+        <a class="nav-link" href="#pipeline">Pipeline</a>
+        <a class="nav-link" href="#runtime">Runtime</a>
+        <a class="nav-link" href="#pricing">Pricing</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="nav-link" href="docs.html">Docs</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn ghost" href="docs.html">Docs</a>
+        <a class="btn primary" href="contact.html">Contact</a>
+      </div>
+
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero section">
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-badge" data-animate>Mini-Heroku Platform</div>
+          <h1 data-animate>Vessel ships services with the clarity of a clean release pipeline.</h1>
+          <p class="lead" data-animate>
+            Build, release, run, and observe without overhead. Vessel gives small teams a technical PaaS with immutable
+            releases, audit logs, and stable rollbacks.
+          </p>
+          <div class="hero-actions" data-animate>
+            <a class="btn primary" href="#get-started">Start a Deploy</a>
+            <a class="btn ghost" href="#pipeline">View Pipeline</a>
+          </div>
+          <div class="hero-metrics" data-animate>
+            <div>
+              <p class="metric-value">45s</p>
+              <p class="metric-label">Average deploy</p>
+            </div>
+            <div>
+              <p class="metric-value">1 click</p>
+              <p class="metric-label">Rollback</p>
+            </div>
+            <div>
+              <p class="metric-value">0 config</p>
+              <p class="metric-label">Service templates</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-animate>
+          <img class="hero-glow" src="assets/vessel.png" alt="" aria-hidden="true" />
+          <img class="hero-mark" src="assets/nobg-vessel-default-2.png" alt="Vessel cloud platform mark" />
+          <div class="hero-panel">
+            <div class="hero-panel-row">
+              <span>Release</span>
+              <span>v12 - healthy</span>
+            </div>
+            <div class="hero-panel-row">
+              <span>Buildpack</span>
+              <span>Node 20</span>
+            </div>
+            <div class="hero-panel-row">
+              <span>Deploy time</span>
+              <span>00:00:45</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="logos section-divider">
+      <div class="container" data-animate>
+        <p class="eyebrow">Trusted By</p>
+        <div class="logo-grid">
+          <div class="logo-pill">Capstone Teams</div>
+          <div class="logo-pill">Systems Labs</div>
+          <div class="logo-pill">Cloud Coursework</div>
+          <div class="logo-pill">DevOps Workshops</div>
+          <div class="logo-pill">Student Startups</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats section-divider">
+      <div class="container stats-grid" data-animate>
+        <div class="stat-item">
+          <p class="stat-value">120+</p>
+          <p class="stat-label">Releases tracked</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-value">3 mins</p>
+          <p class="stat-label">Median build time</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-value">99.9%</p>
+          <p class="stat-label">Target uptime</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="platform" class="section section-divider">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="eyebrow">Platform Core</p>
+          <h2>Everything you need to run a clean release lifecycle.</h2>
+          <p class="lead">
+            Vessel models the real Heroku flow with transparent build logs, release gates, and runtime visibility.
+          </p>
+        </div>
+
+        <div class="steps-grid" data-animate>
+          <div class="step-card">
+            <span class="step-index">01</span>
+            <div>
+              <h3>Build</h3>
+              <p>Language detection, dependency caching, and build logs for every release.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <span class="step-index">02</span>
+            <div>
+              <h3>Release</h3>
+              <p>Immutable slugs, release phase checks, and one click rollbacks.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <span class="step-index">03</span>
+            <div>
+              <h3>Run</h3>
+              <p>Isolated containers with predictable resource limits for web and worker processes.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <span class="step-index">04</span>
+            <div>
+              <h3>Observe</h3>
+              <p>Centralized logs, request traces, and live runtime metrics without plugins.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="runtime" class="section section-divider">
+      <div class="container split">
+        <div class="split-text" data-animate>
+          <p class="eyebrow">Runtime</p>
+          <h2>Predictable, isolated execution for every service.</h2>
+          <p class="lead">
+            Configure web and worker types, scale replicas, and keep the runtime simple with clear process contracts.
+          </p>
+          <ul class="clean-list">
+            <li>Immutable releases to prevent drift.</li>
+            <li>Scoped env variables per app and pipeline.</li>
+            <li>Graceful shutdown hooks for zero data loss.</li>
+          </ul>
+        </div>
+        <div class="split-panel" data-animate>
+          <h3>Runtime Profile</h3>
+          <div class="hero-panel-row">
+            <span>Web</span>
+            <span>2 replicas, 512 MB</span>
+          </div>
+          <div class="hero-panel-row">
+            <span>Worker</span>
+            <span>1 replica, 512 MB</span>
+          </div>
+          <div class="hero-panel-row">
+            <span>Health</span>
+            <span>HTTP checks every 15s</span>
+          </div>
+          <div class="hero-panel-row">
+            <span>Release</span>
+            <span>v12, 4 mins ago</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pipeline" class="section section-divider">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="eyebrow">Deploy Pipeline</p>
+          <h2>From commit to release in a single, readable flow.</h2>
+          <p class="lead">Use the CLI or connect a repo. Every step produces an audit trail you can replay.</p>
+        </div>
+
+        <div class="terminal" data-animate>
+          <div class="terminal-bar">
+            <span></span><span></span><span></span>
+          </div>
+          <pre><code>$ vessel login
+$ vessel init
+$ git push vessel main
+-----> buildpack detected: nodejs
+-----> compiling, caching, releasing
+-----> release v12 created
+-----> web process running on port 8080</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="docs" class="section section-divider">
+      <div class="container split">
+        <div class="split-panel" data-animate>
+          <h3>Release Manifest</h3>
+          <pre><code>app: vessel-starter
+stack: nodejs
+processes:
+  web: npm start
+  worker: npm run jobs
+healthchecks:
+  /health: 200</code></pre>
+        </div>
+        <div class="split-text" data-animate>
+          <p class="eyebrow">Control Plane</p>
+          <h2>Clear configuration without a long YAML parade.</h2>
+          <p class="lead">
+            Define processes, ports, and health checks in a compact manifest. Vessel keeps the rest in code with no
+            hidden infrastructure layers.
+          </p>
+          <ul class="clean-list">
+            <li>Release events and audit log for every deploy.</li>
+            <li>Integrated registry for build artifacts.</li>
+            <li>Policy ready for classroom or demo environments.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote section-divider">
+      <div class="container" data-animate>
+        <h2>"Infrastructure should be calm, transparent, and repeatable. Vessel keeps the pipeline clear so your team stays focused."</h2>
+      </div>
+    </section>
+
+    <section id="security" class="section section-divider">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="eyebrow">Security And Compliance</p>
+          <h2>Operational safety built into every release.</h2>
+          <p class="lead">Vessel enforces clean boundaries with auditable releases and scoped secrets.</p>
+        </div>
+        <div class="card-grid" data-animate>
+          <div class="card">
+            <h3 class="card-title">Isolated Runtime</h3>
+            <p class="card-body">Each release runs in a locked container with explicit CPU and memory limits.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Audit Trail</h3>
+            <p class="card-body">Every build and release event is recorded with a searchable timeline.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Scoped Secrets</h3>
+            <p class="card-body">Environment variables are versioned and bound to the release that needs them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="integrations" class="section section-divider">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="eyebrow">Integrations</p>
+          <h2>Connect your pipeline to the tools you already use.</h2>
+        </div>
+        <div class="card-grid" data-animate>
+          <div class="card">
+            <h3 class="card-title">Git Providers</h3>
+            <p class="card-body">Trigger builds from GitHub, GitLab, or local pushes.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Container Registry</h3>
+            <p class="card-body">Store build artifacts and promote releases between pipelines.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Datastores</h3>
+            <p class="card-body">Connect Postgres, Redis, or object storage with clean env bindings.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Webhooks</h3>
+            <p class="card-body">Send deploy events to chat, status pages, or CI systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section section-divider">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="eyebrow">Testimonials</p>
+          <h2>Trusted by instructors and student teams.</h2>
+        </div>
+        <div class="testimonial-grid" data-animate>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">"Vessel keeps our class deployments consistent. Students ship faster and the logs are clear."</p>
+            <p class="testimonial-name">Systems Instructor</p>
+            <p class="testimonial-role">Virtual Systems Lab</p>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">"We finally have a predictable Heroku-style workflow for our capstone apps."</p>
+            <p class="testimonial-name">Capstone Team Lead</p>
+            <p class="testimonial-role">Cloud Projects</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="changelog" class="section section-divider">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="eyebrow">Changelog</p>
+          <h2>Recent platform updates.</h2>
+        </div>
+        <div class="timeline" data-animate>
+          <div class="timeline-item">
+            <p class="timeline-date">May 2026</p>
+            <p class="timeline-title">v1.0 - First public release</p>
+            <p class="timeline-body">Release pipeline, build logs, rollback flow, and runtime profiles.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-date">Apr 2026</p>
+            <p class="timeline-title">CLI and manifest support</p>
+            <p class="timeline-body">Added CLI deploys, release manifests, and process definitions.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-date">Mar 2026</p>
+            <p class="timeline-title">Metrics and log streaming</p>
+            <p class="timeline-body">Live log tailing with deploy events and runtime metrics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sla" class="section section-divider">
+      <div class="container" data-animate>
+        <div class="sla-panel">
+          <div>
+            <p class="eyebrow">SLA And Uptime</p>
+            <h2>Target uptime built for classroom scale.</h2>
+            <p class="lead">Status checks, health probes, and automatic restarts keep services running.</p>
+          </div>
+          <div class="sla-metrics">
+            <div>
+              <p class="metric-value">99.9%</p>
+              <p class="metric-label">Target uptime</p>
+            </div>
+            <div>
+              <p class="metric-value">24/7</p>
+              <p class="metric-label">Health checks</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section section-divider">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="eyebrow">Pricing</p>
+          <h2>Simple tiers for labs, teams, and demos.</h2>
+          <p class="lead">Start free, upgrade for more runtime and releases. Designed for educational scale.</p>
+        </div>
+
+        <div class="pricing-grid" data-animate>
+          <div class="pricing-tier">
+            <h3>Starter</h3>
+            <p class="price">$0</p>
+            <p class="tier-note">For quick demos and solo projects.</p>
+            <ul>
+              <li>1 app, 1 pipeline</li>
+              <li>1 web process</li>
+              <li>Shared runtime</li>
+            </ul>
+          </div>
+          <div class="pricing-tier featured">
+            <h3>Team</h3>
+            <p class="price">$19</p>
+            <p class="tier-note">For class teams and course projects.</p>
+            <ul>
+              <li>5 apps, 3 pipelines</li>
+              <li>Web and worker processes</li>
+              <li>Release history, logs</li>
+            </ul>
+          </div>
+          <div class="pricing-tier">
+            <h3>Lab</h3>
+            <p class="price">$49</p>
+            <p class="tier-note">For cohort deployments and labs.</p>
+            <ul>
+              <li>15 apps, 10 pipelines</li>
+              <li>Isolated runtime pools</li>
+              <li>Metrics and alert hooks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-divider">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="eyebrow">FAQ</p>
+          <h2>Operational clarity without the guesswork.</h2>
+          <p class="lead">Answers to common questions about the Vessel platform model.</p>
+        </div>
+
+        <div class="faq" data-animate>
+          <details>
+            <summary>Is Vessel a full Heroku replacement?</summary>
+            <p>Vessel is a focused mini-heroku platform built for learning and small deployments. It mirrors the core flow without enterprise complexity.</p>
+          </details>
+          <details>
+            <summary>How do rollbacks work?</summary>
+            <p>Each release is immutable. You can roll back by selecting any prior release without rebuilding.</p>
+          </details>
+          <details>
+            <summary>What runtimes are supported?</summary>
+            <p>Vessel supports common web stacks through buildpacks. Node and Python are first class and more can be added.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="get-started" class="section section-divider">
+      <div class="container cta" data-animate>
+        <div>
+          <p class="eyebrow">Get Started</p>
+          <h2>Deploy your next demo in minutes.</h2>
+          <p class="lead">Run your first mini-heroku release with clean logs, stable rollbacks, and clear runtime control.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn primary" href="docs.html">Read the Docs</a>
+          <a class="btn ghost" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <img class="footer-logo" src="assets/nobg-vessel-default-2.png" alt="Vessel" />
+        <p class="footer-note">Mini-heroku platform for clear, technical deployments.</p>
+        <p class="footer-email"><a href="mailto:services.vessel.cloud@gmail.com">services.vessel.cloud@gmail.com</a></p>
+      </div>
+      <div class="footer-links">
+        <a href="#platform">Platform</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="docs.html">Docs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

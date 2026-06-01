@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vessel Docs</title>
+  <meta name="description" content="Vessel documentation for quickstarts, CLI commands, and deploy flow." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/vessel.ico" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-loading">
+  <div id="page-loader" class="page-loader" aria-hidden="true"></div>
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-shell" data-animate>
+      <a class="logo" href="index.html" aria-label="Vessel home">
+        <img class="logo-img" src="assets/nobg-vessel-default-2.png" alt="Vessel" />
+      </a>
+
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="index.html#platform">Platform</a>
+        <a class="nav-link" href="index.html#pipeline">Pipeline</a>
+        <a class="nav-link" href="index.html#runtime">Runtime</a>
+        <a class="nav-link" href="index.html#pricing">Pricing</a>
+        <a class="nav-link" href="index.html#faq">FAQ</a>
+        <a class="nav-link" href="docs.html">Docs</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn ghost" href="docs.html">Docs</a>
+        <a class="btn primary" href="contact.html">Contact</a>
+      </div>
+
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="docs-hero section">
+      <div class="container" data-animate>
+        <p class="eyebrow">Documentation</p>
+        <h1>Vessel Docs</h1>
+        <p class="lead">Everything you need to deploy on the mini-heroku platform. Start with the quickstart, then go deeper on the CLI and runtime model.</p>
+        <div class="docs-grid">
+          <a class="docs-card" href="#overview">Overview</a>
+          <a class="docs-card" href="#quickstart">Quickstart</a>
+          <a class="docs-card" href="#cli">CLI Commands</a>
+          <a class="docs-card" href="#deploy-flow">Deploy Flow</a>
+          <a class="docs-card" href="#manifest">Config Manifest</a>
+          <a class="docs-card" href="#runtime">Runtime And Scaling</a>
+          <a class="docs-card" href="#logs">Logs And Monitoring</a>
+          <a class="docs-card" href="#faq">FAQ</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="docs-section">
+      <div class="container" data-animate>
+        <h2>Overview</h2>
+        <p class="lead">Vessel follows the classic build, release, run model with a transparent audit trail.</p>
+        <ul class="docs-list">
+          <li>Build: detect stack, compile, and cache dependencies.</li>
+          <li>Release: run release checks and version immutable slugs.</li>
+          <li>Run: launch web and worker processes with health checks.</li>
+          <li>Observe: stream logs, metrics, and release events.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="quickstart" class="docs-section">
+      <div class="container" data-animate>
+        <h2>Quickstart</h2>
+        <p class="lead">Deploy a service from a local repository in minutes.</p>
+        <pre class="docs-code"><code>$ vessel login
+$ vessel init
+$ git push vessel main
+$ vessel releases</code></pre>
+      </div>
+    </section>
+
+    <section id="cli" class="docs-section">
+      <div class="container" data-animate>
+        <h2>CLI Commands</h2>
+        <ul class="docs-list">
+          <li><strong>vessel login</strong> - authenticate to the control plane.</li>
+          <li><strong>vessel init</strong> - create an app and attach a pipeline.</li>
+          <li><strong>vessel releases</strong> - list release history.</li>
+          <li><strong>vessel rollback v12</strong> - roll back to a previous release.</li>
+          <li><strong>vessel logs -t</strong> - stream logs in real time.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="deploy-flow" class="docs-section">
+      <div class="container" data-animate>
+        <h2>Deploy Flow</h2>
+        <p class="lead">Each deploy follows the same observable pipeline.</p>
+        <ul class="docs-list">
+          <li>Push code or connect a Git provider.</li>
+          <li>Buildpack compiles the artifact and stores the slug.</li>
+          <li>Release phase runs migrations or checks.</li>
+          <li>Traffic shifts to the new release.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="manifest" class="docs-section">
+      <div class="container" data-animate>
+        <h2>Config Manifest</h2>
+        <p class="lead">Define processes and health checks in a compact manifest.</p>
+        <pre class="docs-code"><code>app: vessel-starter
+stack: nodejs
+processes:
+  web: npm start
+  worker: npm run jobs
+healthchecks:
+  /health: 200</code></pre>
+      </div>
+    </section>
+
+    <section id="runtime" class="docs-section">
+      <div class="container" data-animate>
+        <h2>Runtime And Scaling</h2>
+        <p class="lead">Scale web or worker processes independently and keep resources predictable.</p>
+        <ul class="docs-list">
+          <li>Scale replicas with explicit resource quotas.</li>
+          <li>Define process types in the manifest or Procfile.</li>
+          <li>Use release phase hooks to gate migrations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="logs" class="docs-section">
+      <div class="container" data-animate>
+        <h2>Logs And Monitoring</h2>
+        <p class="lead">Stream logs and trace releases with a single command.</p>
+        <pre class="docs-code"><code>$ vessel logs -t
+$ vessel events
+$ vessel metrics</code></pre>
+      </div>
+    </section>
+
+    <section id="faq" class="docs-section">
+      <div class="container" data-animate>
+        <h2>FAQ</h2>
+        <div class="faq">
+          <details>
+            <summary>Can I deploy multiple pipelines?</summary>
+            <p>Yes. Each app can have multiple pipelines for dev, staging, and production.</p>
+          </details>
+          <details>
+            <summary>Do I need a Procfile?</summary>
+            <p>Only if you want to override the detected start command or add worker processes.</p>
+          </details>
+          <details>
+            <summary>How are rollbacks handled?</summary>
+            <p>Rollbacks point to a prior immutable release without rebuilding.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <img class="footer-logo" src="assets/nobg-vessel-default-2.png" alt="Vessel" />
+        <p class="footer-note">Mini-heroku platform for clear, technical deployments.</p>
+        <p class="footer-email"><a href="mailto:services.vessel.cloud@gmail.com">services.vessel.cloud@gmail.com</a></p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#platform">Platform</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="docs.html">Docs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
