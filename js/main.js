@@ -62,4 +62,40 @@
       item.classList.add("is-visible");
     });
   }
+
+  // Animated numeric counters for metrics
+  function animateNumber(el, target) {
+    const start = 0;
+    const duration = 1200;
+    const startTime = performance.now();
+    const suffix = (el.textContent || "").replace(/[^\d+]/g, "");
+    function step(now) {
+      const t = Math.min(1, (now - startTime) / duration);
+      const val = Math.round(start + (target - start) * (t));
+      el.textContent = String(val) + (el.dataset.suffix || "");
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  if (!prefersReduced && "IntersectionObserver" in window) {
+    const counters = document.querySelectorAll('.metric-value');
+    const counterObs = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const text = el.textContent.trim();
+          const match = text.match(/(\d+)/);
+          if (match) {
+            const num = parseInt(match[1], 10);
+            const suffix = text.replace(match[1], '');
+            el.dataset.suffix = suffix;
+            animateNumber(el, num);
+          }
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.2 });
+    counters.forEach(c => counterObs.observe(c));
+  }
 })();
